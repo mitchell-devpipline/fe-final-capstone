@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-// import styles from "../styles/styles.scss";
+import "../styles/main.scss";
 import Navbar from "../components/navigaton/Navbar";
 import Landing from "../components/pages/Landing";
 import About from "../components/pages/About";
@@ -10,9 +10,8 @@ import Show from "../components/pages/Show";
 
 export default function App(props) {
   return (
-    <div className="App">
+    <div className="app">
       <Router>
-        {/* <Navbar /> */}
         <Route component={Navbar} />
 
         <Switch>
@@ -31,7 +30,6 @@ export default function App(props) {
           />
         </Switch>
       </Router>
-      {/* <SwapiFetch /> */}
     </div>
   );
 }

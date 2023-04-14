@@ -1,0 +1,12 @@
+@import "./navbar.scss";
+@import "./landing.scss";
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  background-color: rgb(193, 45, 210);
+}

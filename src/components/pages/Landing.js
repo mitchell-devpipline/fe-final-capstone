@@ -1,8 +1,9 @@
 export default function Landing() {
   return (
     <div className="landing">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
+      <h1>Welcome to My Final FE Capstone</h1>
+      <h2>Get ready to see wonders! </h2>
+      <p> Navigate through the app using the Navbar above and enjoy!</p>
     </div>
   );
 }
