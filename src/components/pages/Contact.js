@@ -7,7 +7,7 @@ let countRef = 0;
 initIcons();
 
 export default function Contact() {
-  const [isLoggedIn, setIsLoggedIn] = useState("NOT_LOGGED_IN");
+  const [isLoggedIn, setIsLoggedIn] = useState("NOT_EMAIL_SUBMITTED");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const emailRef = useRef(null);
@@ -26,7 +26,7 @@ export default function Contact() {
       .then((data) => {
         e.target.reset();
         emailRef.current.focus();
-        setIsLoggedIn("LOGGED_IN");
+        setIsLoggedIn("EMAIL_SUBMITTED");
       })
       .catch(console.error)
       .finally(() => setIsSubmitting(false));
@@ -107,11 +107,9 @@ export default function Contact() {
         </div>
       </form>
 
-      {isLoggedIn === "EMIAL_SUBMITTED" && (
+      {isLoggedIn === "EMAIL_SUBMITTED" && (
         <div>
-          <h1>
-            Thank you for your time we will get back to you as soon as possible!
-          </h1>
+          <h1>Thank you for your inquiry!</h1>
         </div>
       )}
     </div>
