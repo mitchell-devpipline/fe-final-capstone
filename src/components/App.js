@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "../styles/main.scss";
 import Navbar from "../components/navigaton/Navbar";
+import Footer from "../components/navigaton/Footer";
 import Landing from "../components/pages/Landing";
 import About from "../components/pages/About";
 import Contact from "../components/pages/Contact";
@@ -29,6 +30,7 @@ export default function App(props) {
             )}
           />
         </Switch>
+        <Route component={Footer} />
       </Router>
     </div>
   );

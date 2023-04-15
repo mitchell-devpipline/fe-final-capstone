@@ -1,6 +1,8 @@
 @import "./mixins.scss";
 @import "./navbar.scss";
+@import "./footer.scss";
 @import "./landing.scss";
+@import "./about.scss";
 html,
 body {
   margin: 0;
@@ -8,5 +10,5 @@ body {
   width: 100%;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
-  background-color: rgb(193, 45, 210);
+  background-color: rgb(210, 111, 45);
 }
