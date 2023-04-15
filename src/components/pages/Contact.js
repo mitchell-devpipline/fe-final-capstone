@@ -33,32 +33,68 @@ export default function Contact() {
   }
 
   return (
-    <div className="Contact">
+    <div className="contact">
       <h1>Contact Form</h1>
 
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="email-entry">
-            <FontAwesomeIcon icon="envelope" />
+        <div className="contact-form-wrapper">
+          <div className="contact-info">
+            <label htmlFor="email-entry">
+              <FontAwesomeIcon icon="envelope" />
+            </label>
+            <input
+              id="contact-input"
+              type="email"
+              name="email"
+              placeholder="Email"
+              ref={emailRef}
+            />
+          </div>
+
+          <div className="contact-info">
+            <label htmlFor="name-input">
+              <FontAwesomeIcon icon="user" />
+            </label>
+            <input
+              id="contact-input"
+              type="text"
+              name="contact-first-name"
+              placeholder="First Name"
+            />
+          </div>
+
+          <div className="contact-info">
+            <label htmlFor="name-input">
+              <FontAwesomeIcon icon="user" />
+            </label>
+            <input
+              id="contact-input"
+              type="text"
+              name="contact-last-name"
+              placeholder="Last Name"
+            />
+          </div>
+
+          <label htmlFor="subject-input">
+            <FontAwesomeIcon icon="pen" />
           </label>
           <input
-            id="email-field"
-            type="email"
-            name="email"
-            placeholder="Email"
-            ref={emailRef}
+            id="contact-input"
+            type="text"
+            name="subject-text"
+            placeholder="Subject"
           />
         </div>
-
         <div>
-          <label htmlFor="name-input">
-            <FontAwesomeIcon icon="user" />
-          </label>
-          <input
-            id="name-input"
+          <label htmlFor="subject-input"></label>
+          <textarea
+            id="message-input"
             type="text"
-            name="contact-name"
-            placeholder="Full Name"
+            name="subject-text"
+            maxLength={250}
+            rows={10}
+            cols={85}
+            placeholder="Enter Message Here"
           />
         </div>
 
