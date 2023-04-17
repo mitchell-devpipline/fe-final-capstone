@@ -6,7 +6,7 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  color: aliceblue;
+  color: $text-color;
 
   .contact-form-wrapper {
     display: flex;
@@ -26,7 +26,7 @@
   button {
     border: none;
     border-radius: 5px;
-    background-color: #2d2078;
+    background-color: $emphasis-color;
     color: goldenrod;
   }
 }

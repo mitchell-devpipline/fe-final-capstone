@@ -11,20 +11,16 @@
   justify-content: space-between;
 
   .shows-wrapper {
-    color: #f0f8ff;
+    color: $text-color;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
     align-items: center;
     width: 20%;
     margin-bottom: 20px;
-    border: 1px solid #2d2078;
-    background-color: #2d2078;
+    border: 1px solid $emphasis-color;
+    background-color: $emphasis-color;
     padding-bottom: 2%;
     border-radius: 5px;
-
-    .img {
-      border-radius: 50px;
-    }
   }
 }
