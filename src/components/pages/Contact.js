@@ -106,6 +106,11 @@ export default function Contact() {
           )}
         </div>
       </form>
+      <p>Mail me Personally!</p>
+      <p>Name: Final Capstone </p>
+      <p>Phone: 801-888-8888</p>
+      <p>Emial: hereisanemail@email.com</p>
+      <p>Hours: Open 24/7</p>
 
       {isLoggedIn === "EMAIL_SUBMITTED" && (
         <div>
