@@ -12,8 +12,6 @@ export default function Navbar() {
       <NavLink to="/contact">Contact</NavLink>
 
       <NavLink to="/gallery">Gallery</NavLink>
-
-      <NavLink to="/show">Show</NavLink>
     </div>
   );
 }

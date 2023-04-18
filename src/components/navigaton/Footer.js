@@ -11,8 +11,6 @@ export default function Footer() {
       <NavLink to="/contact">Contact</NavLink>
 
       <NavLink to="/gallery">Gallery</NavLink>
-
-      <NavLink to="/show">Show</NavLink>
     </div>
   );
 }

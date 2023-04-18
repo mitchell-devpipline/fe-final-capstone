@@ -37,7 +37,9 @@ function GetGallery() {
       <div key={show.id} className="shows-wrapper">
         <div>{show.name || "Not Found"}</div>{" "}
         <div>Rating Out of 10: {show.rating["average"] || "Not Found"}</div>
-        <img src={show.image.medium || "Image Not found"} alt="show images" />
+        <a href="/show">
+          <img src={show.image.medium || "Image Not found"} alt="show images" />
+        </a>
       </div>
     );
   });
