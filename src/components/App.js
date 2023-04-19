@@ -20,7 +20,8 @@ export default function App(props) {
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
           <Route path="/gallery" component={Gallery} />
-          <Route path="/show" component={Show} />
+          {/* <Route path="/show" component={Show} /> */}
+          <Route path="/show/:id" component={Show} />
 
           <Route
             render={(routeProps) => (

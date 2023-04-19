@@ -1,46 +1,45 @@
 import { useEffect, useState } from "react";
 
-export default function Show() {
+export default function Show({ params }) {
+  console.log(params);
   return (
     <div className="show">
       <h1>Welcome to Show</h1>
       <div className="display-show">
-        <GetShow />
+        <GetGallery params={params} />
       </div>
     </div>
   );
 }
 
-function GetShow() {
-  const [show, setShow] = useState([]);
+function GetGallery({ params }) {
+  const [shows, setShows] = useState([]);
 
   useEffect(() => {
     const controller = new AbortController();
     const { signal } = controller;
 
-    fetch("https://api.tvmaze.com/shows/1", {
+    fetch(`https://api.tvmaze.com/shows/1`, {
       signal,
     })
       .then((res) => res.json())
       .then((data) => {
-        setShow(data);
+        setShows(data);
       })
       .catch((err) => {
-        console.error("Get Show Error: ", err);
+        console.error("Get Shows Error: ", err);
       });
 
+    console.log(shows);
     return () => controller.abort();
   }, []);
 
-  return show.map((show) => {
-    return (
-      <div key={show.id} className="show-wrapper">
-        <a href="/show">
-          <img src={show.image.medium || "Image Not found"} alt="show images" />
-        </a>
-        <div>{show.name || "Not Found"}</div>{" "}
-        <div>Rating Out of 10: {show.rating["average"] || "Not Found"}</div>
-      </div>
-    );
-  });
+  return (
+    <div>
+      <div>{shows.name || "Not Found"}</div>
+
+      {console.log(shows)}
+      <img src={shows.image.medium} alt="show images" />
+    </div>
+  );
 }
