@@ -1,5 +1,12 @@
 .show {
+  max-height: 100%;
+  max-width: 100%;
   color: $text-color;
-  display: flex;
-  align-items: center;
+  text-align: center;
+
+  show-display {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
 }

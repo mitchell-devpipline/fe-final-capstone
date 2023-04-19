@@ -13,7 +13,7 @@ export default function Show({ params }) {
 }
 
 function GetGallery({ params }) {
-  const [shows, setShows] = useState([]);
+  const [show, setShows] = useState([]);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -30,16 +30,22 @@ function GetGallery({ params }) {
         console.error("Get Shows Error: ", err);
       });
 
-    console.log(shows);
     return () => controller.abort();
   }, []);
 
   return (
-    <div>
-      <div>{shows.name || "Not Found"}</div>
-
-      {console.log(shows)}
-      <img src={shows.image.medium} alt="show images" />
+    <div className="show-display">
+      <div>{show.name || "Not Found"}</div>
+      {/* {console.log(show)} */}
+      <img src={show.image.medium} alt="show images" />
+      <div>Shows Status: {show.status || "Not Found"}</div>
+      <div>Language: {show.language || "Not Found"}</div>
+      <div>Shows Ave Rating: {show.rating["average"] || "Not Found"}</div>
+      <div>Network: {show.network["name"] || "Not Found"}</div>
+      <div>Shows Site: {show.officialSite || "Not Found"}</div>
+      <div>
+        <h4>Summary:</h4> {show.summary || "Not Found"}
+      </div>
     </div>
   );
 }
