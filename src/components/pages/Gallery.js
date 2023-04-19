@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Gallery() {
   return (
@@ -37,9 +38,9 @@ function GetGallery() {
       <div key={show.id} className="shows-wrapper">
         <div>{show.name || "Not Found"}</div>{" "}
         <div>Rating Out of 10: {show.rating["average"] || "Not Found"}</div>
-        <a href={`/show/1`}>
+        <Link to={`/show/${show.id}`}>
           <img src={show.image.medium || "Image Not found"} alt="show images" />
-        </a>
+        </Link>
       </div>
     );
   });
