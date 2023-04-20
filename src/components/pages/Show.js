@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 export default function Show(props) {
-  console.log(props);
   return (
     <div className="show">
       <div className="display-show">

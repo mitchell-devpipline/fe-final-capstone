@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "../styles/main.scss";
 import Navbar from "../components/navigaton/Navbar";
 import Footer from "../components/navigaton/Footer";
-import Landing from "../components/pages/Landing";
+import Home from "../components/pages/Home";
 import About from "../components/pages/About";
 import Contact from "../components/pages/Contact";
 import Gallery from "../components/pages/Gallery";
@@ -16,11 +16,10 @@ export default function App(props) {
         <Route component={Navbar} />
 
         <Switch>
-          <Route exact path="/" component={Landing} />
+          <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
           <Route path="/gallery" component={Gallery} />
-          {/* <Route path="/show" component={Show} /> */}
           <Route path="/show/:id" component={Show} />
 
           <Route
