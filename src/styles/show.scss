@@ -2,11 +2,25 @@
   max-height: 100%;
   max-width: 100%;
   color: $text-color;
-  text-align: center;
+  grid-template-columns: repeat(2, 2fr);
 
-  show-display {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
+  .show-display {
+    margin: 10px;
+    display: grid;
+    gap: 10px;
+
+    .name {
+      grid-row: 1;
+      grid-column: 2 / 2;
+    }
+
+    .fetch-container {
+      grid-column: 2;
+      grid-row: 2;
+    }
+
+    .show-photo {
+      padding: 10px;
+    }
   }
 }

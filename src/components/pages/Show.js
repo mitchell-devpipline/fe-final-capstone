@@ -4,7 +4,6 @@ export default function Show(props) {
   console.log(props);
   return (
     <div className="show">
-      <h1>Welcome to Show</h1>
       <div className="display-show">
         <GetShows params={props.match.params} />
       </div>
@@ -35,23 +34,36 @@ function GetShows({ params }) {
 
   return (
     <div className="show-display">
-      <div>{show.name || "Not Found"}</div>
-      {/* {console.log(show)} */}
       {show.image?.medium ? (
-        <img src={show.image.original} alt="show images" />
+        <img
+          className="show-photo"
+          src={show.image.original}
+          height={700}
+          width={500}
+          alt="show images"
+        />
       ) : (
         "No Image"
       )}
-      <div>Shows Status: {show.status || "Not Found"}</div>
-      <div>Language: {show.language || "Not Found"}</div>
-      <div>Shows Ave Rating: {show.rating?.average || "Not Found"}</div>
-      <div>Network: {show.network?.name || "Not Found"}</div>
-      <div>Shows Site: {show.officialSite || "Not Found"}</div>
-      <div>
-        <h4>Summary:</h4>{" "}
-        <div
-          dangerouslySetInnerHTML={{ __html: show.summary || "Not Found" }}
-        />
+      <div className="name">
+        <h1>{show.name || "Not Found"}</h1>
+      </div>
+      <div className="fetch-container">
+        <div className="one">Shows Status: {show.status || "Not Found"}</div>
+        <div className="two">Language: {show.language || "Not Found"}</div>
+        <div className="three">
+          Shows Ave Rating: {show.rating?.average || "Not Found"}
+        </div>
+        <div className="four">Network: {show.network?.name || "Not Found"}</div>
+        <div className="five">
+          Shows Site: {show.officialSite || "Not Found"}
+        </div>
+        <div className="six">
+          <h4>Summary:</h4>
+          <div
+            dangerouslySetInnerHTML={{ __html: show.summary || "Not Found" }}
+          />
+        </div>
       </div>
     </div>
   );
