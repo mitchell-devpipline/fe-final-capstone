@@ -4,7 +4,7 @@ export default function Navbar() {
   return (
     <div className="navbar">
       <NavLink exact to="/">
-        Landing
+        Home
       </NavLink>
 
       <NavLink to="/about">About</NavLink>

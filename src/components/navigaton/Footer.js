@@ -3,7 +3,7 @@ export default function Footer() {
   return (
     <div className="footer">
       <NavLink exact to="/">
-        Landing
+        Home
       </NavLink>
 
       <NavLink to="/about">About</NavLink>
