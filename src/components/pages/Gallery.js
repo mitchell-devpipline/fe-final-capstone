@@ -1,18 +1,36 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+// import Filter from "../Filter";
+
+// import { Filter } from "../Filter";
+
 export default function Gallery() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  function handleSearch(e) {
+    setIsSubmitting(e.target.value);
+  }
+
   return (
     <div className="gallery-container">
       <h1>Shows</h1>
+      <input
+        id="search-bar"
+        type="search"
+        name="searchbar"
+        placeholder="Search"
+        onChange={handleSearch}
+      />
       <div className="gallery">
-        <GetGallery />
+        <GetGallery props={isSubmitting} />
       </div>
     </div>
   );
 }
 
-function GetGallery() {
+function GetGallery(isSubmitting) {
+  console.log(isSubmitting);
   const [shows, setShows] = useState([]);
 
   useEffect(() => {
