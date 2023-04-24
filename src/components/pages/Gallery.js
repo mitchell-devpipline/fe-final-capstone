@@ -44,15 +44,16 @@ function GetGallery() {
   }, []);
 
   return (
-    <div className="filter">
-      <div>
+    <div className="gallery-wrapper">
+      <div className="filter">
         <input
+          className="search-bar"
           placeholder="Filter results"
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
         />
       </div>
-      <div>
+      <div className="all-shows-wrapper">
         {filteredShows.map((show) => {
           return (
             <div key={show.id} className="shows-wrapper">
