@@ -1,37 +1,28 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-// import Filter from "../Filter";
-
-// import { Filter } from "../Filter";
-
 export default function Gallery() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  function handleSearch(e) {
-    setIsSubmitting(e.target.value);
-  }
-
   return (
-    <div className="gallery-container">
-      <h1>Shows</h1>
-      <input
-        id="search-bar"
-        type="search"
-        name="searchbar"
-        placeholder="Search"
-        onChange={handleSearch}
-      />
-      <div className="gallery">
-        <GetGallery props={isSubmitting} />
-      </div>
+    <div className="gallery">
+      <GetGallery />
     </div>
   );
 }
 
-function GetGallery(isSubmitting) {
-  console.log(isSubmitting);
+function GetGallery() {
   const [shows, setShows] = useState([]);
+  const [filteredShows, setFilteredShows] = useState([]);
+  const [filter, setFilter] = useState("");
+
+  useEffect(() => {
+    setFilteredShows(
+      shows?.filter((show) => {
+        return show.name.toLowerCase().includes(filter.toLocaleLowerCase());
+        // ||
+        // show.id.includes(filter)
+      })
+    );
+  }, [shows, filter]);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -43,6 +34,7 @@ function GetGallery(isSubmitting) {
       .then((res) => res.json())
       .then((data) => {
         setShows(data);
+        setFilteredShows(data);
       })
       .catch((err) => {
         console.error("Get Shows Error: ", err);
@@ -51,15 +43,33 @@ function GetGallery(isSubmitting) {
     return () => controller.abort();
   }, []);
 
-  return shows.map((show) => {
-    return (
-      <div key={show.id} className="shows-wrapper">
-        <div>{show.name || "Not Found"}</div>{" "}
-        <div>Rating Out of 10: {show.rating["average"] || "Not Found"}</div>
-        <Link to={`/show/${show.id}`}>
-          <img src={show.image.medium || "Image Not found"} alt="show images" />
-        </Link>
+  return (
+    <div className="filter">
+      <div>
+        <input
+          placeholder="Filter results"
+          value={filter}
+          onChange={(e) => setFilter(e.target.value)}
+        />
       </div>
-    );
-  });
+      <div>
+        {filteredShows.map((show) => {
+          return (
+            <div key={show.id} className="shows-wrapper">
+              <div>{show.name || "Not Found"}</div>
+              <div>
+                Rating Out of 10: {show.rating["average"] || "Not Found"}
+              </div>
+              <Link to={`/show/${show.id}`}>
+                <img
+                  src={show.image.medium || "Image Not found"}
+                  alt="show images"
+                />
+              </Link>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
 }

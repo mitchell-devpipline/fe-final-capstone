@@ -21,6 +21,10 @@ export default function Home() {
       <h1>Welcome to My Final FE Capstone</h1>
       <h2>Get ready to see wonders! </h2>
       <p> Navigate through the app using the Navbar above and enjoy!</p>
+      <p>
+        I dont really watch TV but here are some shows that looked interesting
+        to me!
+      </p>
       <ImageGallery
         items={images}
         showPlayButton={false}
