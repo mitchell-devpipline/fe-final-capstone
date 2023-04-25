@@ -24,3 +24,31 @@
     }
   }
 }
+
+@media (max-width: 425px) {
+  .show {
+    height: 100%;
+    width: 100%;
+    color: $text-color;
+
+    .show-display {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 10px;
+
+      .show-photo {
+        height: 200px;
+        width: 150px;
+      }
+    }
+
+    .fetch-container {
+      display: flex;
+
+      .show-info {
+        margin-top: 2%;
+      }
+    }
+  }
+}

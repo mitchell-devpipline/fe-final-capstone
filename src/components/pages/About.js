@@ -2,6 +2,7 @@ export default function About() {
   return (
     <div className="about">
       <h1>Welcome to About Me and My Project!</h1>
+      <h1>(I'm Mitchell Nelson)</h1>
       <p>
         <h3>Project Description:</h3> This project is a display for TV shows and
         movies, Its main purpose is to show where I am proficient and deficient
