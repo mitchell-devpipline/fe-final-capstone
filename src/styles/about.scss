@@ -1,0 +1,28 @@
+.about {
+  color: $text-color;
+  display: flex;
+  // align-items: center;
+  flex-direction: column;
+  text-align: left;
+  margin-left: 5px;
+}
+
+@media (max-width: 425px) {
+  .about {
+    color: $text-color;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    width: 96%;
+
+    h1 {
+      font-size: large;
+    }
+    p {
+      font-size: small;
+      h3 {
+        font-size: medium;
+      }
+    }
+  }
+}
