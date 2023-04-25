@@ -74,16 +74,17 @@ export default function Contact() {
               placeholder="Last Name"
             />
           </div>
-
-          <label htmlFor="subject-input">
-            <FontAwesomeIcon icon="pen" />
-          </label>
-          <input
-            id="contact-input"
-            type="text"
-            name="subject-text"
-            placeholder="Subject"
-          />
+          <div>
+            <label htmlFor="subject-input">
+              <FontAwesomeIcon icon="pen" />
+            </label>
+            <input
+              id="contact-input"
+              type="text"
+              name="subject-text"
+              placeholder="Subject"
+            />
+          </div>
         </div>
         <div>
           <label htmlFor="subject-input"></label>
@@ -91,9 +92,9 @@ export default function Contact() {
             id="message-input"
             type="text"
             name="subject-text"
-            maxLength={250}
-            rows={10}
-            cols={85}
+            // maxLength={250}
+            // rows={10}
+            // cols={85}
             placeholder="Enter Message Here"
           />
         </div>
