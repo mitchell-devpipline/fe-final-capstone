@@ -92,9 +92,7 @@ export default function Contact() {
             id="message-input"
             type="text"
             name="subject-text"
-            // maxLength={250}
-            // rows={10}
-            // cols={85}
+            maxLength={250}
             placeholder="Enter Message Here"
           />
         </div>
