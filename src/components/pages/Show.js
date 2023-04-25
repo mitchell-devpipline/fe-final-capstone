@@ -49,6 +49,7 @@ function GetShows({ params }) {
           )}
         </div>
       </div>
+
       <div className="fetch-container">
         <div className="six">
           <h4>Summary:</h4>

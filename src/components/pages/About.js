@@ -7,7 +7,7 @@ export default function About() {
         <h3>Project Description:</h3> This project is a display for TV shows and
         movies, Its main purpose is to show where I am proficient and deficient
         in React JS I will fetch information from the given API and display
-        information on the Entertainment options.
+        information on the Entertainment options in a user friendly way.
       </p>
       <p>
         <h3>Industry Goals:</h3>
