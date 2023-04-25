@@ -1,4 +1,24 @@
 .home {
   @include corestyles;
   height: 100%;
+  text-align: center;
+}
+
+@media (max-width: 425px) {
+  .home {
+    @include corestyles;
+    height: 100%;
+    text-align: center;
+    width: 97%;
+
+    h1 {
+      font-size: large;
+    }
+    h2 {
+      font-size: medium;
+    }
+    p {
+      font-size: small;
+    }
+  }
 }
