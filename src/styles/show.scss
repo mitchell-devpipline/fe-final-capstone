@@ -25,6 +25,34 @@
   }
 }
 
+@media (max-width: 1117px) {
+  .show {
+    max-height: 100%;
+    max-width: 100%;
+    color: $text-color;
+
+    .show-display {
+      display: grid;
+      grid-template-columns: repeat(2, 2fr);
+      margin: 10px;
+
+      .show-photo {
+        height: 500px;
+        width: auto;
+      }
+
+      .fetch-container {
+        grid-row: 1;
+        padding-top: 5%;
+
+        .show-info {
+          margin-top: 2%;
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 425px) {
   .show {
     height: 100%;
@@ -38,8 +66,8 @@
       margin: 10px;
 
       .show-photo {
-        height: 200px;
-        width: 150px;
+        height: 300px;
+        width: auto;
       }
     }
 
